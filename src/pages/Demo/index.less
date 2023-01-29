@@ -1,56 +1,55 @@
 .dz-table {
   position: relative;
   overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
 
   .table-item {
     margin-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
 
     &.table-title {
       position: sticky;
       top: 0;
       z-index: 1;
     }
-  }
 
-  .tr {
-    display: flex;
-    justify-content: space-between;
-    background: #fff;
-    border-radius: 2px;
-
-    .tr-left {
+    .table-item-left {
       flex-shrink: 0;
       flex-grow: 0;
 
-      .begin-item {
-        position: relative;
-
-        .td-list {
-          .td {
-            &:last-of-type::after {
-              display: block;
-            }
+      .tr {
+        .td {
+          &:last-of-type::after {
+            display: block;
           }
         }
       }
     }
 
-    .tr-right {
+    .table-item-right {
       flex-grow: 1;
       width: 0;
     }
+  }
 
-    .td-list {
-      width: 100%;
-      overflow: hidden;
-      display: flex;
+  .tbox {
+    width: 100%;
+    overflow: hidden;
+
+    .tr {
+      background: #fff;
+      border-radius: 2px;
+      display: inline-flex;
+      min-width: 100%;
 
       .td {
         padding: 0 24px;
         display: flex;
         align-items: center;
         position: relative;
-        flex-grow: 0;
+        flex-grow: 1;
         width: 200px;
         flex-shrink: 0;
         height: 54px;
@@ -63,7 +62,7 @@
   }
 
   .table-title .tr,
-  .tr.table-item-title {
+  .tr.tr-title {
     font-weight: 500;
 
     .td::after {
@@ -85,7 +84,46 @@
     }
   }
 
-  .tr.table-item-title {
+  .tr.tr-title {
     background: rgb(0 0 0 / 2%);
+  }
+}
+
+.scrollbar {
+  position: fixed;
+  bottom: 0;
+  left: 24px;
+  right: 24px;
+
+  .scrollbar-horz-container {
+    align-items: flex-end;
+    bottom: 0;
+    display: flex;
+    height: 18px;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+
+    &.active {
+      border-top: 1px solid #e1e1e1;
+      background: #fbfbfb;
+      align-items: center;
+      cursor: pointer;
+
+      .scrollbar-horz-handler {
+        height: 12px;
+        margin-bottom: 0;
+      }
+    }
+
+    .scrollbar-horz-handler {
+      background: rgb(45 45 45 / 50%);
+      border-radius: 6px;
+      height: 7px;
+      margin-bottom: 3px;
+      transition: opacity 0.1s ease;
+      transition-property: opacity, height;
+      min-width: 20px;
+    }
   }
 }
