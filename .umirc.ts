@@ -6,28 +6,54 @@ export default defineConfig({
   model: {},
   initialState: {},
   request: {},
-  layout: {
-    title: '@umijs/max',
-  },
   routes: [
     {
       path: '/',
-      redirect: '/home',
-    },
-    {
-      name: '首页',
-      path: '/home',
-      component: './Home',
-    },
-    {
-      name: '权限演示',
-      path: '/access',
-      component: './Access',
-    },
-    {
-      name: ' CRUD 示例',
-      path: '/table',
-      component: './Table',
+      component: '../layout/BaseLayout',
+      routes: [
+        {
+          name: '首页',
+          path: '/home',
+          routes: [
+            {
+              name: 'path1',
+              path: '/home/path1',
+              component: './Home',
+            },
+            {
+              name: 'path2',
+              path: '/home/path2',
+              component: './Home',
+            },
+          ],
+        },
+        {
+          name: '权限演示',
+          path: '/access',
+          routes: [
+            {
+              name: 'path1',
+              path: '/access/path1',
+              component: './Access',
+            },
+            {
+              name: 'path2',
+              path: '/access/path2',
+              component: './Access',
+            },
+          ],
+        },
+        {
+          name: ' CRUD 示例',
+          path: '/table',
+          component: './Table',
+        },
+        {
+          name: 'Demo',
+          path: '/demo',
+          component: './Demo',
+        },
+      ],
     },
   ],
   npmClient: 'yarn',
