@@ -7,6 +7,7 @@ module.exports = {
     '@typescript-eslint/no-use-before-define': 'off',
     'no-async-promise-executor': 'off',
     'unused-imports/no-unused-imports': 'off',
+    'react/button-has-type': 'off',
     'unused-imports/no-unused-vars': 'off',
   },
 };

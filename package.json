@@ -15,7 +15,8 @@
     "@ant-design/pro-components": "^2.0.1",
     "@umijs/max": "^4.0.42",
     "ahooks": "^3.7.4",
-    "antd": "^5.0.0"
+    "antd": "^5.0.0",
+    "zustand": "^4.3.2"
   },
   "devDependencies": {
     "@types/react": "^18.0.0",

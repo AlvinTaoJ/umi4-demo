@@ -51,7 +51,23 @@ export default defineConfig({
         {
           name: 'Demo',
           path: '/demo',
-          component: './Demo',
+          routes: [
+            {
+              name: 'Demo',
+              path: '/demo/table',
+              component: './Demo',
+            },
+            {
+              name: 'Zustand',
+              path: '/demo/zustand',
+              component: './Demo/Zustand',
+            },
+            {
+              name: 'Context',
+              path: '/demo/context',
+              component: './Demo/Context',
+            },
+          ],
         },
       ],
     },
