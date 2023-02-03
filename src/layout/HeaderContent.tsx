@@ -6,7 +6,6 @@ interface HeaderContentProps extends HeaderViewProps {
 }
 
 const HeaderContent: React.FC<HeaderContentProps> = (props) => {
-  console.log(props);
   return <>{props.defaultDom}</>;
 };
 

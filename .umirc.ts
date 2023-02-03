@@ -53,6 +53,11 @@ export default defineConfig({
           path: '/demo',
           routes: [
             {
+              name: 'TableNew',
+              path: '/demo/tableNew',
+              component: './Demo/TableNew',
+            },
+            {
               name: 'Demo',
               path: '/demo/table',
               component: './Demo',
@@ -66,6 +71,11 @@ export default defineConfig({
               name: 'Context',
               path: '/demo/context',
               component: './Demo/Context',
+            },
+            {
+              name: 'Tree',
+              path: '/demo/tree',
+              component: './Demo/Tree',
             },
           ],
         },

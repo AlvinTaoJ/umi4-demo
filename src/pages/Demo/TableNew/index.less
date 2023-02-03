@@ -1,0 +1,101 @@
+.ctable {
+  width: 100%;
+  height: 500px;
+  overflow: scroll;
+
+  .table-item {
+    margin-bottom: 12px;
+
+    .tr {
+      display: inline-flex;
+      height: 54px;
+      min-width: 100%;
+
+      .td {
+        width: 200px;
+        flex-shrink: 0;
+        flex-grow: 1;
+        border-bottom: 1px solid rgb(0 0 0 / 6%);
+        background-color: #fff;
+        position: relative;
+
+        &.fixed {
+          flex-grow: 0;
+          position: sticky;
+        }
+
+        &::after {
+          content: '';
+          display: none;
+          position: absolute;
+          right: 0;
+          top: 50%;
+          transform: translateY(-50%);
+          height: 24px;
+          width: 1px;
+          background: rgb(0 0 0 / 6%);
+        }
+
+        &:last-of-type::after {
+          display: none;
+        }
+
+        .text {
+          height: 100%;
+          padding: 0 24px;
+          display: flex;
+          align-items: center;
+          position: relative;
+          justify-content: space-between;
+
+          .expand-icon {
+            position: absolute;
+            left: 5px;
+            top: 50%;
+            transform: translateY(-50%);
+            transition: transform 0.1s ease;
+            transform-origin: center center;
+
+            &.active {
+              transform: translateY(-50%) rotate(90deg);
+            }
+          }
+        }
+      }
+    }
+
+    .table-item-title {
+      position: sticky;
+      top: 40px;
+      z-index: 1;
+      font-weight: 500;
+
+      .td {
+        background-color: #fafafa;
+
+        &::after {
+          display: block;
+        }
+      }
+    }
+  }
+
+  .table-item.table-title {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    font-weight: 500;
+
+    .tr {
+      height: 40px;
+
+      .td {
+        background-color: #fafafa;
+
+        &::after {
+          display: block;
+        }
+      }
+    }
+  }
+}
